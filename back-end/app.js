@@ -7,7 +7,7 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const session = require('koa-generic-session')
 const redisStore = require('koa-redis')
-const { REDIS_CONF } = require('./conf/conf.js')
+const { REDIS_CONF,REDIS_KEY } = require('./conf/conf.js')
 
 const user = require('./routes/user')
 
@@ -35,7 +35,7 @@ app.use(async (ctx, next) => {
 })
 
 // session配置
-app.keys = ['PKoitss'] // 加密cookie的
+app.keys = [REDIS_KEY] // 加密cookie的
 app.use(session({
   // 配置cookie
   cookie: {
