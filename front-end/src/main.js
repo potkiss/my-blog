@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from '../src/router/index.js'
 const app = createApp(App)
 
 // v-md-editor
@@ -16,6 +17,6 @@ import 'prismjs/components/prism-json';
 VMdEditor.use(vuepressTheme, {
   Prism,
 });
-
+app.use(router)
 app.use(VMdEditor)
 app.mount('#app')

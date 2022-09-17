@@ -1,6 +1,6 @@
 <template>
-    <v-md-editor v-model="text" @save="saveData" ></v-md-editor>
-    <!-- <v-md-editor v-model="text" @save="saveData" mode="preview"></v-md-editor> -->
+    <!-- <v-md-editor v-model="text" @save="saveData" ></v-md-editor> -->
+    <v-md-editor v-model="text" @save="saveData" mode="preview"></v-md-editor>
 </template>
 
 <script setup name="MdEditor">
