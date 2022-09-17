@@ -6,6 +6,11 @@ export function handleBlog() {
             url: '/blog/list',
             method: 'get',
             params: param
+         }),
+         getBlogDetails: param => request({
+            url: '/blog/details',
+            method: 'get',
+            params: param
          })
     }
 }
