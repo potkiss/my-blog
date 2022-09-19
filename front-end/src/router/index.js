@@ -1,8 +1,8 @@
 import { createRouter,createWebHashHistory }  from "vue-router"
-import FrontList from '../components/FrontList.vue'
-import IotList from '../components/IotList.vue'
-import TimeLine from '../components/TimeLine.vue'
-import About from '../components/About.vue'
+import FrontList from '../view/FrontList.vue'
+import IotList from '../view/IotList.vue'
+import TimeLine from '../view/TimeLine.vue'
+import About from '../view/About.vue'
 
 const routes = [
     {

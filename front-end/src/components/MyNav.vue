@@ -2,7 +2,7 @@
     <div class="nav-box" id="nav-fixed" :class="isFixed ? 'fixed' : ''">
         <div class="nav-bar">
                 <div @click="handelNav(index)" class="bar-item" v-for="(item,index) in navList" :key="item.title" :class="activeNav===index?'active-item':''">
-                    <!-- <img :src="item.icon" alt=""> -->
+                    <!-- <img src="../assets/avater.jpeg" alt=""> -->
                     <span>{{ item.title }}</span>
                 </div>
         </div>
@@ -128,7 +128,7 @@
         .nav-scrool {
             width: 100%;
             height: 90vh;
-            font-size: 10vmin;
+            padding-top: 5vmin;
             .nav-item {
                 width: 100%;
                 height: 100%;
