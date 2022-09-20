@@ -12,6 +12,13 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import Prism from 'prismjs';
 // highlight code
 import 'prismjs/components/prism-json';
+// 图片懒加载
+import lazyPlugin from 'vue3-lazy'
+app.use(lazyPlugin, {
+    loading: '/loading.gif', // 图片加载时默认图片
+    error: '/avater.jpeg', // 图片加载失败时默认图片
+})
+
 
 
 VMdEditor.use(vuepressTheme, {

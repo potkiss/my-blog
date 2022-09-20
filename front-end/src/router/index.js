@@ -3,6 +3,7 @@ import FrontList from '../view/FrontList.vue'
 import IotList from '../view/IotList.vue'
 import TimeLine from '../view/TimeLine.vue'
 import About from '../view/About.vue'
+import MdEditor from '../components/MdEditor.vue'
 
 const routes = [
     {
@@ -33,6 +34,9 @@ const routes = [
                 component: About
             }
         ],
+    }, {
+        path:'/details',
+        component: MdEditor
     }
 ]
 const router = createRouter({
