@@ -1,25 +1,39 @@
 <template>
     <div class="card-box">
         <div class="card">
-            <span>100K</span>
+            <span>{{ myInfo.githubObj }}</span>
             <span>GitHub</span>
         </div>
         <div class="card">
-            <span>100K</span>
+            <span>{{ myInfo.bilibiliFollower }}</span>
             <span>Bilibli</span>
         </div>
         <div class="card">
-            <span>100K</span>
+            <span>{{ myInfo.juejinNum }}</span>
             <span>掘金</span>
         </div>
         <div class="card">
-            <span>100K</span>
+            <span>{{ myInfo.csdnNum }}</span>
             <span>CSDN</span>
         </div>
     </div>
 </template>
 
 <script setup name="MyInfo">
+    import { getMyInfo } from '../apis/info.js'
+    import { watch,ref } from 'vue'
+    let myInfo = ref({
+        githubObj: '-',
+        bilibiliFollower:'-',
+        juejinNum: '-',
+        csdnNum: '-'
+    })
+    getMyInfo().fourNum().then(res => {
+        myInfo.value = res.data.result
+    })
+    watch(myInfo,(newVal,oldVal) => {
+        console.log(newVal,oldVal)
+    })
 </script>
 
 <style lang="scss" scoped>

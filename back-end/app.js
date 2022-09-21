@@ -11,6 +11,7 @@ const { REDIS_CONF,REDIS_KEY } = require('./conf/conf.js')
 
 const user = require('./routes/user')
 const blog = require('./routes/blog')
+const pubInfo = require('./routes/pubInfo')
 
 // error handler
 onerror(app)
@@ -53,6 +54,7 @@ app.use(session({
 // routes
 app.use(user.routes(), user.allowedMethods())
 app.use(blog.routes(), blog.allowedMethods())
+app.use(pubInfo.routes(), pubInfo.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
