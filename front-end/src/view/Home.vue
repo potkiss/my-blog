@@ -7,13 +7,12 @@
             <div class="nickname"> POTKISS </div>
         </div>
         <my-info></my-info>
-        <my-nav></my-nav>
+        <router-view></router-view>
     </div>
 </template>
 
 <script setup name="Home">
     import MyInfo from '../components/MyInfo.vue'
-    import MyNav from '../components/MyNav.vue';
 </script>
 
 <style scoped lang="scss">

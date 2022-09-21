@@ -14,12 +14,17 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-json';
 // 图片懒加载
 import lazyPlugin from 'vue3-lazy'
+// ElementPlus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
+
+app.use(ElementPlus,{ size: 'small', zIndex: 3000 })
+
 app.use(lazyPlugin, {
     loading: '/loading.gif', // 图片加载时默认图片
     error: '/avater.jpeg', // 图片加载失败时默认图片
 })
-
-
 
 VMdEditor.use(vuepressTheme, {
   Prism,

@@ -1,12 +1,11 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Home from './view/Home.vue'
 </script>
 
 <template>
   <div style="background: #101729;">
-    <home></home>
+    <router-view></router-view>
   </div>
 </template>
 

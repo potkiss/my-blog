@@ -24,8 +24,8 @@
         itemData:Object
     })
     function goDetails(e) {
-        console.log(e)
-        router.push('/details')
+        // console.log(e)
+        router.push(`/details?id=${e}`)
     }
 </script>
 
