@@ -4,7 +4,7 @@ const axios = require('axios').default;
 const cheerio = require('cheerio');
 
 router.get('/api/pubinfo', async function (ctx, next) {
-    let data = {bilibiliFollower:null,githubObj:2,juejinNum:null,csdnNum:null}
+    let data = {bilibiliFollower:null,githubObj:4,juejinNum:null,csdnNum:null}
     const bilibili = await axios.get('https://api.bilibili.com/x/relation/stat?vmid=438480452').then(res => {
         data.bilibiliFollower = res.data.data.follower
     })

@@ -6,12 +6,11 @@
                 {{ itemData.title }}
             </div>
             <div class="tags">
-                <span>前端</span>
-                <span>后端</span>
+                <span v-for="item in itemData.relation" :key="item">{{ item }}</span>
             </div>
             <div class="details">
                 <span>10K</span>
-                <span>2022-9-21</span>
+                <span>{{ itemData.create_time }}</span>
             </div>
         </div>
     </div>
@@ -20,7 +19,7 @@
 <script setup name="ListItem">
     import { useRouter } from 'vue-router'
     const router = useRouter()
-   defineProps({
+    defineProps({
         itemData:Object
     })
     function goDetails(e) {

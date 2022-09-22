@@ -8,10 +8,16 @@
     import ListItem from '../components/ListItem.vue';
     import { reactive } from 'vue'
     import { handleBlog } from '../apis/blog.js'
+    import { formatTime } from '../utils/time.js'
     let blogList = reactive([])
     const init =  (async () => {
-        blogList.push(...await handleBlog().getBlogList().then(res => res.data.result))
-        // console.log(blogList)
+        const res = await handleBlog().getBlogList({keyword:'前端'}).then(res => res.data.result)
+        res.forEach(item => {
+            item.relation = item.relation.split(';')
+            item.create_time = formatTime('YY-m-d', item.create_time)
+            blogList.push(item)
+        })
+        console.log(blogList)
     })()
 </script>
 
