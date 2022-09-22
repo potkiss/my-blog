@@ -58,13 +58,15 @@
         height: 10vmin;
         color: #fff;
         cursor: pointer;
-        font-size: 2vmin;
         a {
             display: flex;
             align-items: center;
             justify-content: space-evenly;
             flex-direction: column;
             & span:nth-child(1) {
+                font-size: 4vmin;
+            }
+            & span:nth-child(2) {
                 font-size: 3vmin;
             }
         }

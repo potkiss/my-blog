@@ -17,7 +17,7 @@
             item.create_time = formatTime('YY-m-d', item.create_time)
             blogList.push(item)
         })
-        console.log(blogList)
+        // console.log(blogList)
     })()
 </script>
 

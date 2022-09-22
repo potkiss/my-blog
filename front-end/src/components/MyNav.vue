@@ -59,7 +59,7 @@
     }
     // nav导航
     function handelNav(e){
-        console.log(e)
+        // console.log(e)
         activeNav.value = e
         router.push({
             name: obj[e],
