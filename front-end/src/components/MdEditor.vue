@@ -2,10 +2,18 @@
   <div class="md-editor">
     <div class="top-nav">
       <img src="/back.svg" alt="" @click="back">
+      <span>{{ title }}</span>
       <img src="/more.svg" alt="" @click="more">
     </div>
     <div class="content">
-      <v-md-editor v-model="text" @save="saveData" mode="preview"></v-md-editor>
+        <Suspense>
+            <template #default>
+              <v-md-editor v-model="text" @save="saveData" mode="preview"></v-md-editor>
+            </template>
+            <template #fallback>
+                <div>Loading...</div>
+            </template>
+        </Suspense>
     </div>
   </div>
 
@@ -20,9 +28,11 @@
   const route = useRoute()
   const router = useRouter()
   let text = ref('')
+  let title = ref('')
   if (route.query.id) {
       handleBlog().getBlogDetails({id:route.query.id}).then(res => {
       text.value = res.data.result.content
+      title.value = res.data.result.title
     })
   } else {
     text.value = `### 404 \n ### 文章不存在`
@@ -59,6 +69,9 @@
       padding: 3vmin;
       box-sizing: border-box;
       box-shadow: 0px 0px 10px 0px #000;
+      span {
+        font-size: 4vmin;
+      }
       img {
         width: 5vmin;
         height: 5vmin;

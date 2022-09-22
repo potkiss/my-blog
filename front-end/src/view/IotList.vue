@@ -1,6 +1,13 @@
 <template>
     <div class="blog-list">
-        <list-item v-for="item in blogList" :key="item" :item-data="item"></list-item>
+        <Suspense>
+            <template #default>
+                <list-item v-for="item in blogList" :key="item" :item-data="item"></list-item>
+            </template>
+            <template #fallback>
+                <div>Loading...</div>
+            </template>
+        </Suspense>
     </div>
 </template>
 
